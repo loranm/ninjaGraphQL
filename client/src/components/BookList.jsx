@@ -1,19 +1,6 @@
 import React from "react";
-import gql from "graphql-tag";
 import { Query } from "react-apollo";
-
-const GET_BOOKS = gql`
-  {
-    books {
-      id
-      name
-      genre
-      author {
-        name
-      }
-    }
-  }
-`;
+import { GET_BOOKS } from "../queries/queries";
 
 const Books = () => {
   return (
