@@ -14,13 +14,29 @@ const ApolloConfig = {
 const client = new ApolloClient(ApolloConfig);
 
 class App extends Component {
+  state = {
+    name: null,
+    genre: null,
+    authorID: null
+  };
+
+  handleChanges = value => {
+    this.setState(() => value);
+  };
+
   render() {
+    const { name, genre, authorID } = this.state;
     return (
       <ApolloProvider client={client}>
         <div className="App">
           <h1>Book list</h1>
           <BookList />
-          <AddBook />
+          <AddBook
+            onChange={this.handleChanges}
+            name={name}
+            genre={genre}
+            authorID={authorID}
+          />
         </div>
       </ApolloProvider>
     );
