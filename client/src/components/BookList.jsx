@@ -11,16 +11,18 @@ const Books = () => {
 
         const { books } = data;
         return (
-          <ul>
-            {books.map(book => {
-              const { genre, name: title, id, author } = book;
-              return (
-                <li key={id}>
-                  {title} - {genre} - {author.name}
-                </li>
-              );
-            })}
-          </ul>
+          <div>
+            <ul>
+              {books.map(book => {
+                const { genre, name: title, id, author } = book;
+                return (
+                  <li key={id}>
+                    {title} - {genre} - {author.name}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         );
       }}
     </Query>
